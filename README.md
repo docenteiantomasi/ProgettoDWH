@@ -1,4 +1,4 @@
-## Progetto DWH
+### Progetto DWH
 In questo progetto ho realizzato un Data Warehouse tramite SQL Server.
 
 Il processo è stato diviso in tre fasi:
