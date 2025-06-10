@@ -1,1 +1,1 @@
-CREATE TABLE Clienti(col1 int)
+CREATE TABLE Clienti(col1 int);
