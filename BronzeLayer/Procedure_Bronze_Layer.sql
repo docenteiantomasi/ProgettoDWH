@@ -1,9 +1,11 @@
-/*Creazione del Bronze Layer*/
+/*Creazione del Bronze Layer.
+Il bronze Layer è pensato per ricreare su una area centralizzata i dati di partenza.
+Parto creando un nuovo Database*/
 CREATE DATABASE BronzeLayer
 
 USE BronzeLayer
 
-/*Creazione delle tabelle del Bronze Layer*/
+/*Creazione delle tabelle del Bronze Layer. Le colonne sono NVARCHAR in modo da non creare conversioni implicite*/
 CREATE TABLE dbo.Orders(
 RowID nvarchar(255),
 OrderID nvarchar(255),
@@ -34,7 +36,7 @@ CREATE TABLE Returns(
 
 /*Caricamento tramite bulk insert*/
 BULK INSERT dbo.Orders
-FROM 'C:\Users\ianto\Desktop\Nuovo\Diagramma a stella\Superstore_orders.csv'
+FROM 'Superstore_orders.csv'
 WITH (
 	ROWTERMINATOR = '\n',
 	FIELDTERMINATOR = ';',
@@ -42,7 +44,7 @@ WITH (
 	MAXERRORS = 0);
 
 BULK INSERT dbo.Returns
-FROM 'C:\Users\ianto\Desktop\Nuovo\Diagramma a stella\Superstore_returns.csv'
+FROM 'Superstore_returns.csv'
 WITH (
 	ROWTERMINATOR = '\n',
 	FIELDTERMINATOR = ';',
